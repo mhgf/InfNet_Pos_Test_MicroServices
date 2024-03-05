@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableDefaultItems>true</EnableDefaultItems>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.EntityFrameworkCore">
+        <HintPath>..\..\..\..\..\..\..\..\home\matheus\.nuget\packages\microsoft.entityframeworkcore\8.0.2\lib\net8.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Product.Core\Product.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational.Design.Specification.Tests" Version="2.0.3" />
+    </ItemGroup>
+
+</Project>

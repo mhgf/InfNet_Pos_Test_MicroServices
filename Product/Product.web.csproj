@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+      <Content Remove="core\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="core\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="core\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="core\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="core\Product.Core\obj\Product.Core.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="core\Product.Core\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="core\Product.Core\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="core\Product.Infra\obj\Product.Infra.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="core\Product.Infra\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="core\Product.Infra\obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="core\Product.Core\Product.Core.csproj" />
+      <ProjectReference Include="core\Product.Infra\Product.Infra.csproj" />
+    </ItemGroup>
+
+</Project>
